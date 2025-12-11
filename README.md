@@ -1,36 +1,102 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# MacLand 🍎💻
 
-## Getting Started
+An interactive 3D MacBook product viewer built with Next.js, Three.js, and GSAP animations. Experience Apple's MacBook Pro lineup in a stunning, immersive web experience.
 
-First, run the development server:
+![MacBook Preview](https://img.shields.io/badge/Next.js-16-black?style=flat-square&logo=next.js)
+![Three.js](https://img.shields.io/badge/Three.js-R3F-black?style=flat-square&logo=three.js)
+![GSAP](https://img.shields.io/badge/GSAP-Animations-88CE02?style=flat-square&logo=greensock)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## ✨ Features
+
+- **3D MacBook Models** - Realistic 14" and 16" MacBook Pro models rendered with Three.js
+- **Interactive Controls** - Rotate and explore the models with smooth presentation controls
+- **Model Switching** - Seamlessly switch between 14" and 16" models with animated transitions
+- **Color Options** - Toggle between Silver and Space Black color variants
+- **GSAP Animations** - Smooth fade and slide animations powered by GSAP
+- **Responsive Design** - Optimized for both desktop and mobile viewing
+- **Studio Lighting** - Professional lighting setup for realistic product visualization
+
+## 🛠️ Tech Stack
+
+- **Framework**: [Next.js 16](https://nextjs.org/) (App Router)
+- **3D Rendering**: [React Three Fiber](https://docs.pmnd.rs/react-three-fiber) + [Three.js](https://threejs.org/)
+- **3D Helpers**: [@react-three/drei](https://github.com/pmndrs/drei) (PresentationControls, lighting)
+- **Animations**: [GSAP](https://greensock.com/gsap/) + [@gsap/react](https://greensock.com/react/)
+- **State Management**: [Zustand](https://zustand-demo.pmnd.rs/)
+- **Styling**: CSS + [clsx](https://github.com/lukeed/clsx)
+- **Runtime**: [Bun](https://bun.sh/)
+
+## 📁 Project Structure
+
+```
+maclanding/
+├── app/
+│   ├── components/
+│   │   ├── models/           # 3D MacBook model components
+│   │   │   ├── Macbook-14.jsx
+│   │   │   ├── Macbook-16.jsx
+│   │   │   └── Macbook.jsx
+│   │   ├── three/            # Three.js related components
+│   │   │   ├── ModelSwitcher.tsx
+│   │   │   └── StudioLight.tsx
+│   │   └── ProductViewer.tsx # Main product viewer component
+│   ├── store/                # Zustand state management
+│   └── page.tsx              # Main page
+└── public/                   # Static assets
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🚀 Getting Started
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Prerequisites
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- Node.js 18+ or Bun
+- npm, yarn, pnpm, or bun
 
-## Learn More
+### Installation
 
-To learn more about Next.js, take a look at the following resources:
+1. Clone the repository:
+```bash
+git clone https://github.com/KrisAdw/MacLand.git
+cd maclanding
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+2. Install dependencies:
+```bash
+bun install
+# or
+npm install
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+3. Run the development server:
+```bash
+bun run dev
+# or
+npm run dev
+```
 
-## Deploy on Vercel
+4. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 🎮 Usage
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **Rotate Model**: Click and drag to rotate the MacBook
+- **Switch Size**: Click the 14" or 16" buttons to switch between models
+- **Change Color**: Click the color swatches to switch between Silver and Space Black
+
+## 📝 Current Progress
+
+- [x] 3D MacBook model integration (14" & 16")
+- [x] Interactive presentation controls
+- [x] Model switching with GSAP animations
+- [x] Color variant switching
+- [x] Studio lighting setup
+- [x] Responsive mobile support
+- [ ] Additional product sections
+- [ ] More animations and interactions
+
+## 📄 License
+
+This project is for portfolio/educational purposes.
+
+---
+
+Made with ❤️ by [KrisAdw](https://github.com/KrisAdw)
