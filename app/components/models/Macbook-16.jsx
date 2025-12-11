@@ -8,7 +8,7 @@ Source: https://sketchfab.com/3d-models/macbook-pro-m3-16-inch-2024-8e34fc2b3031
 Title: macbook pro M3 16 inch 2024
 */
 
-import { noChangeParts } from '@/app/constants'
+import { noChangeParts } from '@/app/components/constants'
 import useMacbookStore from '@/app/store'
 import { useEffect } from 'react'
 import * as THREE from 'three'

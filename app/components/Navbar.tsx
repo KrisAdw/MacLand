@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { navLinks } from "../constants";
+import { navLinks } from "./constants";
 
 const Navbar = () => {
   return (
@@ -13,20 +13,20 @@ const Navbar = () => {
 
         {/* Link */}
         <ul>
-            {navLinks.map(({label}) => (
-                <li key={label}>
-                    <Link href="/">{label}</Link>
-                </li>
-            ))}
+          {navLinks.map(({ label }) => (
+            <li key={label}>
+              <Link href="/">{label}</Link>
+            </li>
+          ))}
         </ul>
 
         <div className="flex-center gap-3">
-            <button>
-                <Image src="/search.svg" alt="Search" width={25} height={25}></Image>
-            </button>
-            <button>
-                <Image src="/cart.svg" alt="Cart" width={25} height={25}></Image>
-            </button>
+          <button>
+            <Image src="/search.svg" alt="Search" width={25} height={25}></Image>
+          </button>
+          <button>
+            <Image src="/cart.svg" alt="Cart" width={25} height={25}></Image>
+          </button>
         </div>
       </nav>
     </header>
