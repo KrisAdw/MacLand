@@ -24,11 +24,17 @@ export default function MacbookModel14(props) {
     scene.traverse((child) => {
       if (child.isMesh) {
         if (!noChangeParts.includes(child.name)) {
-          child.material.color = new THREE.Color(color)
+          // Handle both single material and material array
+          const materials = Array.isArray(child.material) ? child.material : [child.material];
+          materials.forEach((mat) => {
+            if (mat && mat.color) {
+              mat.color = new THREE.Color(color);
+            }
+          });
         }
       }
     })
-  }, [color])
+  }, [color, scene])
 
   return (
     <group {...props} dispose={null}>
