@@ -19,7 +19,7 @@ const ProductViewer = () => {
 
             <div className="controls">
                 <p className="info">
-                    MacbookPro 16&quot; in Silver / Space Black
+                    Macbook Pro | Available in 14" & 16" in Silver or Space Black 
                 </p>
 
                 <div className="flex-center gap-5 mt-5">
