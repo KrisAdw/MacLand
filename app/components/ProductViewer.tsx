@@ -2,7 +2,6 @@
 import clsx from "clsx";
 import useMacbookStore from "../store";
 import { Canvas } from "@react-three/fiber";
-import MacbookModel14 from "./models/Macbook-14"
 import StudioLight from "./three/StudioLight";
 
 import ModelSwitcher from "./three/ModelSwitcher";
@@ -19,7 +18,7 @@ const ProductViewer = () => {
 
             <div className="controls">
                 <p className="info">
-                    Macbook Pro | Available in 14" & 16" in Silver or Space Black 
+                    Macbook Pro | Available in 14" & 16" in Silver or Space Black
                 </p>
 
                 <div className="flex-center gap-5 mt-5">
@@ -41,20 +40,20 @@ const ProductViewer = () => {
                     </div>
 
                     <div className="size-control">
-                        <div onClick={() => setScale(0.06)} className={clsx(scale === 0.06 ? 'bg-white text-black': 'bg-transparent text-white')}>
+                        <div onClick={() => setScale(0.06)} className={clsx(scale === 0.06 ? 'bg-white text-black' : 'bg-transparent text-white')}>
                             <p>14&quot;</p>
                         </div>
-                        <div onClick={() => setScale(0.08)} className={clsx(scale === 0.08 ? 'bg-white text-black': 'bg-transparent text-white')}>
+                        <div onClick={() => setScale(0.08)} className={clsx(scale === 0.08 ? 'bg-white text-black' : 'bg-transparent text-white')}>
                             <p>16&quot;</p>
                         </div>
-                        
+
                     </div>
                 </div>
             </div>
 
-            <Canvas id="canvas" camera={{position: [0, 2, 5], fov: 50, near: 0.1, far: 1000}}>
-                <StudioLight />                
-                <ModelSwitcher isMobile={isMobile} scale={isMobile ? scale - 0.03 : scale} />    
+            <Canvas id="canvas" camera={{ position: [0, 2, 5], fov: 50, near: 0.1, far: 1000 }}>
+                <StudioLight />
+                <ModelSwitcher isMobile={isMobile} scale={isMobile ? scale - 0.03 : scale} />
             </Canvas>
         </section>
     );

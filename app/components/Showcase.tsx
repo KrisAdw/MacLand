@@ -2,12 +2,17 @@
 import { useGSAP } from "@gsap/react"
 import { useMediaQuery } from "react-responsive"
 import gsap from "gsap"
+import { ScrollTrigger } from "gsap/ScrollTrigger"
+import { useRef } from "react"
+
+gsap.registerPlugin(ScrollTrigger)
 
 const Showcase = () => {
+    const sectionRef = useRef<HTMLElement>(null)
     const isTablet = useMediaQuery({ query: "(max-width: 1024px)" })
 
     useGSAP(() => {
-        if(!isTablet) {
+        if (!isTablet) {
             const timeline = gsap.timeline({
                 scrollTrigger: {
                     trigger: "#showcase",
@@ -26,10 +31,10 @@ const Showcase = () => {
                 ease: 'power1.in',
             })
         }
-    }, [isTablet])
+    }, { dependencies: [isTablet], scope: sectionRef })
 
     return (
-        <section id="showcase">
+        <section id="showcase" ref={sectionRef}>
             <div className="media">
                 <video src="/videos/game.mp4" loop muted autoPlay playsInline />
                 <div className="mask ">
@@ -60,7 +65,7 @@ const Showcase = () => {
                         </div>
                     </div>
 
-                     <div className="max-w-3xs space-y-14">
+                    <div className="max-w-3xs space-y-14">
                         <div className="space-y-2">
                             <p>Up to</p>
                             <h3>4x faster</h3>

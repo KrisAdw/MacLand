@@ -21,10 +21,10 @@ const Navbar = () => {
         </ul>
 
         <div className="flex-center gap-3">
-          <button>
+          <button aria-label="Search">
             <Image src="/search.svg" alt="Search" width={25} height={25}></Image>
           </button>
-          <button>
+          <button aria-label="Cart">
             <Image src="/cart.svg" alt="Cart" width={25} height={25}></Image>
           </button>
         </div>
