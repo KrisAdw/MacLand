@@ -1,44 +1,36 @@
 'use client'
-import { useGSAP } from "@gsap/react"
-import { useMediaQuery } from "react-responsive"
-import gsap from "gsap"
-import { ScrollTrigger } from "gsap/ScrollTrigger"
-import { useRef } from "react"
-
-gsap.registerPlugin(ScrollTrigger)
+import {useMediaQuery} from "react-responsive";
+import {useGSAP} from "@gsap/react";
+import gsap from 'gsap';
 
 const Showcase = () => {
-    const sectionRef = useRef<HTMLElement>(null)
-    const isTablet = useMediaQuery({ query: "(max-width: 1024px)" })
+    const isTablet = useMediaQuery({ query: '(max-width: 1024px)'});
 
     useGSAP(() => {
-        if (!isTablet) {
+        if(!isTablet) {
             const timeline = gsap.timeline({
                 scrollTrigger: {
-                    trigger: "#showcase",
-                    start: "top top",
-                    end: "bottom top",
+                    trigger: '#showcase',
+                    start: 'top top',
+                    end: 'bottom top',
                     scrub: true,
                     pin: true,
                 }
-            })
+            });
 
-            timeline.to('.mask img', {
-                transform: 'scale(1.1)',
-            }).to('.content', {
-                opacity: 1,
-                y: 0,
-                ease: 'power1.in',
-            })
+            timeline
+                .to('.mask img', {
+                    transform: 'scale(1.1)'
+                }).to('.content', { opacity: 1, y: 0, ease: 'power1.in' });
         }
-    }, { dependencies: [isTablet], scope: sectionRef })
+    }, [isTablet])
 
     return (
-        <section id="showcase" ref={sectionRef}>
+        <section id="showcase">
             <div className="media">
                 <video src="/videos/game.mp4" loop muted autoPlay playsInline />
-                <div className="mask ">
-                    <img src="/mask-logo.svg" alt="Mask Logo" />
+                <div className="mask">
+                    <img src="/mask-logo.svg" />
                 </div>
             </div>
 
@@ -82,5 +74,4 @@ const Showcase = () => {
         </section>
     )
 }
-
 export default Showcase
