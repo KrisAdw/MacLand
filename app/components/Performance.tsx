@@ -2,11 +2,10 @@
 import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { performanceImages, performanceImgPositions } from "./constants";
 
 const Performance = () => {
-    const sectionRef = useRef<HTMLSelectElement>(null);
+    const sectionRef = useRef<HTMLElement>(null);
 
     useGSAP(() => {
         // Text animation (runs on all screens)
