@@ -1,27 +1,43 @@
 'use client'
-import {useMediaQuery} from "react-responsive";
-import {useGSAP} from "@gsap/react";
+import { useMediaQuery } from "react-responsive";
+import { useGSAP } from "@gsap/react";
 import gsap from 'gsap';
 
+/**
+ * Showcase Component
+ * 
+ * Displays a promotional video and a masked image that animates on scroll.
+ * Uses GSAP ScrollTrigger to pin the section and animate the chip revelation.
+ */
 const Showcase = () => {
-    const isTablet = useMediaQuery({ query: '(max-width: 1024px)'});
+    // Disable animations on tablet/mobile for better performance/UX
+    const isTablet = useMediaQuery({ query: '(max-width: 1024px)' });
 
     useGSAP(() => {
-        if(!isTablet) {
+        if (!isTablet) {
+            // Main timeline for the scroll sequence
             const timeline = gsap.timeline({
                 scrollTrigger: {
                     trigger: '#showcase',
-                    start: 'top top',
-                    end: 'bottom top',
-                    scrub: true,
-                    pin: true,
+                    start: 'top top',   // Start when top of section hits top of viewport
+                    end: 'bottom top',  // End when bottom of section hits top of viewport
+                    scrub: true,        // Smooth scrubbing effect linked to scrollbar
+                    pin: true,          // Pin the section during animation
                 }
             });
 
+            // Animation Sequence:
+            // 1. Scale up the mask image to reveal content behind it
+            // 2. Fade in and slide up the text content
             timeline
                 .to('.mask img', {
                     transform: 'scale(1.1)'
-                }).to('.content', { opacity: 1, y: 0, ease: 'power1.in' });
+                })
+                .to('.content', {
+                    opacity: 1,
+                    y: 0,
+                    ease: 'power1.in'
+                });
         }
     }, [isTablet])
 

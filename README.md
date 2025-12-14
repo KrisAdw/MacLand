@@ -90,8 +90,9 @@ npm run dev
 - [x] Color variant switching
 - [x] Studio lighting setup
 - [x] Responsive mobile support
+- [x] Showcase section with scroll-linked animations
 - [ ] Additional product sections
-- [ ] More animations and interactions
+- [ ] Loading optimization & SEO
 
 ## 📄 License
 
