@@ -13,6 +13,8 @@ An interactive 3D MacBook product viewer built with Next.js, Three.js, and GSAP 
 - **Model Switching** - Seamlessly switch between 14" and 16" models with animated transitions
 - **Color Options** - Toggle between Silver and Space Black color variants
 - **GSAP Animations** - Smooth fade and slide animations powered by GSAP
+- **Performance Showcase** - Scroll-triggered animations demonstrating graphics performance
+- **Feature Highlights** - Dynamic masonry grid layout showcasing key product features
 - **Responsive Design** - Optimized for both desktop and mobile viewing
 - **Studio Lighting** - Professional lighting setup for realistic product visualization
 
@@ -23,7 +25,7 @@ An interactive 3D MacBook product viewer built with Next.js, Three.js, and GSAP 
 - **3D Helpers**: [@react-three/drei](https://github.com/pmndrs/drei) (PresentationControls, lighting)
 - **Animations**: [GSAP](https://greensock.com/gsap/) + [@gsap/react](https://greensock.com/react/)
 - **State Management**: [Zustand](https://zustand-demo.pmnd.rs/)
-- **Styling**: CSS + [clsx](https://github.com/lukeed/clsx)
+- **Styling**: [Tailwind CSS v4](https://tailwindcss.com/) + [clsx](https://github.com/lukeed/clsx)
 - **Runtime**: [Bun](https://bun.sh/)
 
 ## 📁 Project Structure
@@ -39,7 +41,13 @@ maclanding/
 │   │   ├── three/            # Three.js related components
 │   │   │   ├── ModelSwitcher.tsx
 │   │   │   └── StudioLight.tsx
-│   │   └── ProductViewer.tsx # Main product viewer component
+│   │   ├── Footer.tsx
+│   │   ├── Hero.tsx
+│   │   ├── Highlight.tsx     # Feature highlights section
+│   │   ├── Navbar.tsx
+│   │   ├── Performance.tsx   # Performance showcase section
+│   │   ├── ProductViewer.tsx # Main product viewer component
+│   │   └── Showcase.tsx
 │   ├── store/                # Zustand state management
 │   └── page.tsx              # Main page
 └── public/                   # Static assets
@@ -81,18 +89,7 @@ npm run dev
 - **Rotate Model**: Click and drag to rotate the MacBook
 - **Switch Size**: Click the 14" or 16" buttons to switch between models
 - **Change Color**: Click the color swatches to switch between Silver and Space Black
-
-## 📝 Current Progress
-
-- [x] 3D MacBook model integration (14" & 16")
-- [x] Interactive presentation controls
-- [x] Model switching with GSAP animations
-- [x] Color variant switching
-- [x] Studio lighting setup
-- [x] Responsive mobile support
-- [x] Showcase section with scroll-linked animations
-- [ ] Additional product sections
-- [ ] Loading optimization & SEO
+- **Scroll**: Scroll down to trigger performance and highlight animations
 
 ## 📄 License
 
