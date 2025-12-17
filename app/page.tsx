@@ -6,6 +6,7 @@ import Performance from "./components/Performance";
 import Features from "./components/Features";
 import Highlight from "./components/Highlight";
 import Footer from "./components/Footer";
+import ScrollToTop from "./components/ScrollToTop";
 
 const Home = () => {
   return (
@@ -18,6 +19,7 @@ const Home = () => {
       <Features />
       <Highlight />
       <Footer />
+      <ScrollToTop />
     </main>
   );
 };

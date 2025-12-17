@@ -13,9 +13,11 @@ const Navbar = () => {
 
         {/* Link */}
         <ul>
-          {navLinks.map(({ label }) => (
+          {navLinks.map(({ label, href }) => (
             <li key={label}>
-              <Link href="/">{label}</Link>
+              <Link href={href} className="hover:text-white transition-colors">
+                {label}
+              </Link>
             </li>
           ))}
         </ul>
